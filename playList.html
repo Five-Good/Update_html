@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.5/datatables.min.js"></script>
+    <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.5/datatables.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/playSelection.css">
+    <title>媒體列表</title>
+</head>
+<body>
+    <header></header>
+    <div id="main">
+        <div class="sideWP"></div>
+        <div class="content">
+            <div class="searchBar">
+                <div class="filter">
+                    <div class="flex">
+                        <label for="city">縣市 :</label>
+                        <select name="" id="city">
+                            <option value="all">全部</option>
+                            <option value="Taipei">台北市</option>
+                            <option value="New Taipei City">新北市</option>
+                        </select>
+                    </div>
+                    <div class="flex">
+                        <label for="area">區域 :</label>
+                        <select name="" id="area">
+                            <option value="all">全部</option>
+                            <option value="100">中正區</option>
+                            <option value="105">松山區</option>
+                            <option value="106">大安區</option>
+                            <option value="110">信義區</option>
+                        </select>
+                    </div>
+                    <div class="flex">
+                      <label for="road">道路 :</label>
+                      <select name="" id="road">
+                          <option value="all">全部</option>
+                          <option value=" ">道路名稱</option>
+                          <option value=" ">道路名稱</option>
+                          <option value=" ">道路名稱</option>
+                          <option value=" ">道路名稱</option>
+                      </select>
+                    </div>
+                  <div class="flex">
+                    <label for="startDate">開始日期 :</label>
+                    <input type="text" class="datepicker" id="startDate">
+                  </div>
+                  <div class="flex">
+                    <label for="endDate">結束日期 :</label>
+                    <input type="text" class="datepicker" id="endDate">
+                  </div>
+                </div>
+                <div class="btn search">查詢</div>
+            </div>
+              <div class="btn add">新增</div>
+              <table class="pcTable edit table table-striped table-bordered" cellspacing="0" id="playList">
+                <thead>
+                  <tr>
+                    <th>
+                      <input type="checkbox">
+                    </th>
+                    <th>編號</th>
+                    <th>檔名</th>
+                    <th>縮圖</th>
+                    <th>格式</th>
+                    <th>標籤</th>
+                    <th>秒數</th>
+                    <th>核准日期</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>A000000001</td>
+                    <td>機場宣導</td>
+                    <td><img src="img/table/smallPhoto.png" alt=""></td>
+                    <td>圖片</td>
+                    <td class="tagTd">
+                      <div class="tags">
+                        <span class="tag">活動</span>
+                        <span class="tag">夏季</span>
+                        <span class="tag">音樂</span>
+                      </div>
+                    </td>
+                    <td>--</td>
+                    <td>23.06.06</td>
+                    <td class="btnImg">
+                      <a href="contractEdit.html"><img src="img/table/Info.svg" alt="" class="edit"></a>
+                      <img src="img/table/delet.svg" alt="" class="deleteImg">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>B000000002</td>
+                    <td>機場宣導</td>
+                    <td><img src="img/table/smallPhoto.png" alt=""></td>
+                    <td>圖片</td>
+                    <td class="tagTd">
+                      <div class="tags">
+                        <span class="tag">活動</span>
+                        <span class="tag">夏季</span>
+                        <span class="tag">音樂</span>
+                      </div>
+                    </td>
+                    <td>--</td>
+                    <td>23.06.16</td>
+                    <td class="btnImg">
+                      <a href="contractEdit.html"><img src="img/table/Info.svg" alt="" class="edit"></a>
+                      <img src="img/table/delet.svg" alt="" class="deleteImg">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox"></td>
+                    <td>C000000001</td>
+                    <td>機場宣導</td>
+                    <td><img src="img/table/smallPhoto.png" alt=""></td>
+                    <td>影片</td>
+                    <td class="tagTd">
+                      <div class="tags">
+                        <span class="tag">活動</span>
+                        <span class="tag">夏季</span>
+                        <span class="tag">音樂</span>
+                      </div>
+                    </td>
+                    <td>15</td>
+                    <td>23.06.26</td>
+                    <td class="btnImg">
+                      <a href="contractEdit.html"><img src="img/table/Info.svg" alt="" class="edit"></a>
+                      <img src="img/table/delet.svg" alt="" class="deleteImg">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <div class="sideNo">7</div>
+    <script src="js/dataTable.js"></script>
+    <script src="js/dateTimepicker.js"></script>
+</body>
+</html>

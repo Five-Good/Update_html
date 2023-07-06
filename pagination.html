@@ -1,0 +1,42 @@
+<select name="" id="" class="perPages">
+    <option value="">10/頁</option>
+    <option value="">20/頁</option>
+</select>
+<p class="left"></p>
+<select name="" id="" class="pages">
+    <option value="">1</option>
+    <option value="">2</option>
+</select>
+<p class="right"></p>
+<p class="total">共 <span>330</span>頁</p>
+<script>
+  $(document).ready(function(){
+
+        
+        $('.pagination .next').click(function(){
+          let ID = $(this).parents('ul.pagination').attr('id');
+          let text = $('#'+ID).find('.number.active').text();
+          let endNumber = $('#'+ID).find('.number.end').text();
+          $('#'+ID+' .number').eq(text).addClass('active');
+          $('#'+ID+' .number').eq(text).siblings('.number').removeClass('active');
+          if(text >= endNumber){
+            $('#'+ID+' .number').eq((endNumber-1)).addClass('active');
+            $('#'+ID+' .number').eq((endNumber-1)).siblings('.number').removeClass('active');
+          }
+        });
+
+        $('.pagination .back').click(function(){
+          let ID = $(this).parents('ul.pagination').attr('id');
+          let text = $('#'+ID).find('.number.active').text();
+          let n = text-2;
+          $('#'+ID+' .number').eq(n).addClass('active');
+          $('#'+ID+' .number').eq(n).siblings('.number').removeClass('active');
+          if(n<0){
+            $('#'+ID+' .number').eq(0).addClass('active');
+            $('#'+ID+' .number').eq(0).siblings('.number').removeClass('active');
+          }
+        });
+
+    
+    });
+</script>

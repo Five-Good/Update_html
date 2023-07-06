@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="js/loading.js"></script>
+        <script src="https://cdn.datatables.net/v/dt/dt-1.13.5/datatables.min.js"></script>
+        <link href="https://cdn.datatables.net/v/dt/dt-1.13.5/datatables.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+        <link rel="stylesheet" href="css/layout.css" type="text/css">
+        <link rel="stylesheet" href="css/table.css">
+        <title>設備控管</title>
+      </head>
+<body>
+    <header></header>
+    <div id="main">
+      <div class="sideWP"></div>
+      <div class="content">
+        <div class="searchBar">
+            <div class="filter">
+                <div class="flex">
+                    <label for="tag">標籤 :</label>
+                    <input type="text" id="tag" placeholder="多個標籤,請用逗號分開">
+                </div>
+                <div class="flex">
+                    <label for="city">縣市 :</label>
+                    <select name="" id="city">
+                        <option value="all">全部</option>
+                        <option value="Taipei">台北市</option>
+                        <option value="New Taipei City">新北市</option>
+                    </select>
+                </div>
+                <div class="flex">
+                    <label for="area">區域 :</label>
+                    <select name="" id="area">
+                        <option value="all">全部</option>
+                        <option value="100">中正區</option>
+                        <option value="105">松山區</option>
+                        <option value="106">大安區</option>
+                        <option value="110">信義區</option>
+                    </select>
+                </div>
+                <div class="flex">
+                  <label for="road">道路 :</label>
+                  <select name="" id="road">
+                      <option value="all">全部</option>
+                      <option value=" ">道路名稱</option>
+                      <option value=" ">道路名稱</option>
+                      <option value=" ">道路名稱</option>
+                      <option value=" ">道路名稱</option>
+                  </select>
+                </div>
+                <div class="flex">
+                    <label for="screen">螢幕 :</label>
+                    <select name="" id="screen">
+                        <option value="all">全部</option>
+                        <option value="horizontal">橫式</option>
+                        <option value="vertical">直式</option>
+                    </select>
+                </div>
+                <div class="flex">
+                    <label for="state">狀態 :</label>
+                    <select name="" id="state">
+                        <option value="all">全部</option>
+                        <option value="">出租</option>
+                        <option value="">可租</option>
+                        <option value="">售出</option>
+                        <option value="">報廢</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn search">查詢</div>
+        </div>
+        <div class="btn add">新增</div>
+        <table class="pcTable edit table table-striped table-bordered" cellspacing="0" id="deviceList">
+          <thead>
+            <tr>
+              <th>
+                <input type="checkbox">
+              </th>
+              <th>ID</th>
+              <th>縣市</th>
+              <th>區域</th>
+              <th>道路</th>
+              <th>標籤</th>
+              <th>螢幕</th>
+              <th>鏡頭</th>
+              <th>狀態</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>mac address</td>
+              <td>台北市</td>
+              <td>大安區</td><td>道路名稱</td>
+              <td class="tagTd">
+                <div class="tags">
+                  <span class="tag">台大</span>
+                  <span class="tag">公館</span>
+                  <span class="tag">書店</span>
+                </div>
+              </td>
+              <td>直式</td>
+              <td>Y</td>
+              <td>出租</td>
+              <td class="btnImg">
+                <a href="contractEdit.html">
+                  <img src="img/table/edit.svg" alt="" class="edit">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="sideNo">4</div>
+    <script src="js/dataTable.js"></script>
+</body>
+</html>

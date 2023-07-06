@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&family=Noto+Sans+TC&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: '微軟正黑', 'Noto Sans TC', sans-serif;
+  line-height: normal;
+}
+
+select {
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+body ul,
+body li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
+}
+
+input:focus {
+  outline: none
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: #ffffff;
+  height: 5px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e7e7e7;
+  background: transparent;
+  border-radius: 12px;
+}
+
+.sideScroll {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  font-family: 'Noto Sans TC', '微軟正黑', sans-serif;
+  position: relative;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fffafc+0,ffffff+100 */
+  background: #fffafc;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #fffafc 0%, #ffffff 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #fffafc 0%, #ffffff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #fffafc 0%, #ffffff 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffafc', endColorstr='#ffffff', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+
+}
+
+/*header*/
+header {
+  position: fixed;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+header:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 47px;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #ebebeb;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fbfafb+0,fcfcfc+100 */
+  background: rgb(251, 250, 251);
+  /* Old browsers */
+  background: -moz-linear-gradient(left, rgba(251, 250, 251, 1) 0%, rgba(252, 252, 252, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(251, 250, 251, 1) 0%, rgba(252, 252, 252, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(251, 250, 251, 1) 0%, rgba(252, 252, 252, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbfafb', endColorstr='#fcfcfc', GradientType=1);
+  /* IE6-9 */
+
+}
+
+header .wrapper {
+  width: 100%;
+  margin: 0 auto;
+  height: 52px;
+  padding: 4px 20px 12px 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .wrapper h1 {
+  width: 178.5px;
+  height: 52px;
+  text-align: center;
+  box-shadow: 0px 10px 70px #F5E8FF;
+  background-color: #FCF6FF;
+  border-right: 1px solid #F5F5F5;
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  line-height: normal;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+header .wrapper h1 a {
+  padding: 0 70px;
+  height: 48px;
+  border-bottom: 1px solid #ebebeb;
+  background: url('../img/menu/logo.svg') no-repeat center;
+  background-size: 82%;
+}
+
+header .wrapper h1 a.smallLogo {
+  background: url('../img/menu/logoSmall.svg') no-repeat 8px center;
+  background-size: 24px;
+  padding: 0 20px;
+}
+
+header img,
+header a img {
+  object-fit: contain;
+}
+
+header .btnWP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .btnWP a,
+header .btnWP a span {
+  color: #999;
+  font-size: 1rem;
+}
+
+header .btnWP .hello {
+  display: flex;
+  flex-direction: column;
+  justify-items: flex-start;
+  justify-content: center;
+  margin-right: 0.5rem;
+}
+
+header .btnWP .hello .text {
+  color: #6D6E71;
+  font-size: 0.95rem;
+}
+
+header .btnWP .hello .time {
+  font-size: 12px;
+}
+
+
+header .btnWP .icon {
+  margin: .6rem;
+  color: #6D6E71;
+}
+
+header .btnWP .logout {
+  width: 20px;
+  height: 20px;
+  background: url('../img/menu/logout.svg') no-repeat center;
+  background-size: contain;
+}
+
+header .btnWP .member {
+  width: 20px;
+  height: 20px;
+  background: url('../img/menu/user.svg') no-repeat center;
+  background-size: contain;
+}
+
+header .btnWP select {
+  border-radius: 16px;
+  padding: 5px 10px;
+  width: 68px;
+  color: #6D6E71;
+  background-color: #fff;
+  line-height: normal;
+  height: auto;
+  margin-right: 10px;
+}
+
+/*menu*/
+header .wrapper nav,
+header .wrapper .menu {
+  display: none;
+}
+
+header .wrapper nav {
+  width: 30px;
+  height: 40px;
+  cursor: pointer;
+  display: none;
+  position: relative;
+  background-color: transparent;
+  line-height: normal;
+  box-shadow: none;
+}
+
+header .wrapper nav span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #6D6E71;
+  -webkit-transition: all .3s ease 0s;
+  transition: all .3s ease 0s;
+}
+
+header .wrapper nav span:nth-of-type(1) {
+  top: 2px;
+}
+
+header .wrapper nav span:nth-of-type(2) {
+  top: 12px;
+}
+
+header .wrapper nav span:nth-of-type(3) {
+  top: 22px;
+}
+
+.menuOpen header .wrapper nav span:nth-of-type(1) {
+  top: 12px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  background: rgb(98, 98, 98);
+}
+
+.menuOpen header .wrapper nav span:nth-of-type(2) {
+  width: 0;
+  right: 0;
+}
+
+.menuOpen header .wrapper nav span:nth-of-type(3) {
+  top: 12px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  background: rgb(98, 98, 98);
+}
+
+header .wrapper .menu {
+  width: 100%;
+  position: fixed;
+  top: 47px;
+  right: 0;
+  z-index: 3;
+  padding: 0 0 10px;
+  display: none;
+  background-color: #fff;
+}
+
+
+/*main*/
+#main {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #fcfcfc;
+  position: relative;
+}
+
+/*side*/
+#main .sideWP {
+  width: 181.5px;
+  height: 99vh;
+  padding: 0;
+
+  background-color: #fff;
+  /* position: fixed; */
+  overflow: visible;
+  border-right: 1px solid #F5F5F5;
+  box-shadow: 0px 10px 70px #F5E8FF;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,fdfdfd+100 */
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #fdfdfd 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #fdfdfd 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #fdfdfd 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#fdfdfd', GradientType=0);
+  /* IE6-9 */
+
+}
+
+header .toggle {
+  position: fixed;
+  left: 167px;
+  top: 12px;
+  z-index: 3;
+}
+
+header .toggle img {
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+header .toggle.hided img {
+  -moz-transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+#main .side {
+  width: 100%;
+  margin: 16px auto 0;
+}
+
+header .side a,
+#main .side a {
+  color: #2D3142;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 0 12px 24px;
+  border-left: 4px solid transparent;
+}
+
+header .side a img,
+#main .side a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+#main .side a:hover {
+  border-left: 4px solid #D95685;
+  background-color: #FDF5F9;
+}
+
+header .side a.current,
+#main .side a.current {
+  border-left: 4px solid #D95685;
+}
+
+header .side a.current span,
+#main .side a.current span {
+  color: #D95685;
+  font-family: '微軟正黑';
+}
+
+header .side>a span,
+#main .side>a span {
+  font-size: .95rem;
+  color: #6D6E71;
+  position: relative;
+}
+
+header .side a img.active,
+#main .side a img.active,
+header .side a.current img.normal,
+#main .side a.current img.normal {
+  display: none;
+}
+
+header .side a.current img.active,
+#main .side a.current img.active {
+  display: block;
+}
+
+/*content*/
+#main .content {
+  /* left: 181.5px; */
+  width: 90%;
+  height: 95vh;
+  position: relative;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+
+/*footer*/
+footer {
+  text-align: center;
+}
+
+footer p {
+  color: #BFC0C0;
+  font-size: 0.9rem;
+}
+
+/*sideNO*/
+.sideNo,
+.itemNo,
+.childNo {
+  display: none;
+}
+
+@media(max-width:900px) {
+
+  #main .sideWP,
+  header .toggle {
+    display: none;
+  }
+
+  #main .content {
+    width: 100%;
+    left: 0;
+    padding-top: 39px;
+  }
+
+  header .wrapper h1 {
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  header .wrapper h1 a {
+    border: 0;
+  }
+
+  header .btnWP {
+    display: none;
+  }
+
+  header .side a {
+    justify-content: center;
+    margin: 10px auto;
+  }
+
+  header .side a img {
+    width: 32px;
+    height: 32px;
+  }
+
+  header .side a img.small {
+    width: 28px;
+    height: 28px;
+  }
+
+  header .side>a span {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
+  header .wrapper nav {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 90%;
+    z-index: 2;
+  }
+
+  header .wrapper .menu {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  header .wrapper .menu .side {
+    overflow: scroll;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  header .wrapper .menu .one {
+    background-color: transparent;
+    padding-left: 0;
+  }
+
+  header .wrapper .menu .bottom {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  header .side>a span {
+    color: #575757;
+  }
+
+  .textSmall {
+    font-size: .9rem;
+    margin-left: 0;
+    margin-right: 10px;
+  }
+
+  select {
+    font-size: 1rem;
+    color: #fff;
+    background-color: #444546;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+}
+
+@media(max-width:395px) {
+  footer p {
+    width: 65%;
+    margin: 0 auto;
+  }
+}
+
+@media(max-width:375px) {
+  footer p {
+    font-size: .8rem;
+    width: 85%;
+  }
+
+  header .wrapper nav {
+    left: 88%;
+    top: 19%;
+    width: 25px;
+  }
+}
+
+@media(max-width:350px) {
+  footer p {
+    font-size: .75rem;
+    width: 67%;
+  }
+}

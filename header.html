@@ -1,0 +1,128 @@
+<div class="wrapper">
+  <h1><a href="index.html"></a></h1>
+  <div class="btnWP">
+    <a href="member.html" class="icon member"></a><!--會員-->
+    <a href="login.html" class="icon logout"></a> <!--登出-->
+    <select>
+      <option value="taiwan">台灣</option>
+      <option value="english">English</option>
+    </select>
+    <a class="hello">
+      <span class="text">Hi, BIGBOSS</span>
+      <span class="time">2023.06.21 14:14</span>
+    </a>
+  </div>
+  <nav>
+    <span></span>
+    <span></span>
+    <span></span>
+  </nav>
+  <a href="javascript:;" class="toggle">
+    <img src="img/menu/toggle.svg" alt="">
+  </a>
+  <div class="menu">
+    <div class="side">
+      <a href="index.html" class="one">
+        <img src="img/menu/chart.svg" alt="" class="normal">
+        <img src="img/menu/chart_active.svg" alt="" class="active">
+        <span>數據中心</span>
+      </a>
+      <a href="mediaList.html" class="one">
+        <img src="img/menu/mediaList.svg" alt="" class="normal">
+        <img src="img/menu/mediaList_active.svg" alt="" class="active">
+        <span>媒體素材</span>
+      </a>
+      <a href="mediaApply.html" class="one">
+        <img src="img/menu/mediaApply.svg" alt="" class="normal">
+        <img src="img/menu/mediaApply_active.svg" alt="" class="active">
+        <span>素材申請</span>
+      </a>
+      <a href="mediaCheck.html" class="one">
+        <img src="img/menu/mediaCheck.svg" alt="" class="normal">
+        <img src="img/menu/mediaCheck_active.svg" alt="" class="active">
+        <span>素材審核</span>
+      </a>
+      <a href="deviceList.html" class="one">
+        <img src="img/menu/device.svg" alt="" class="normal">
+        <img src="img/menu/device_active.svg" alt="" class="active">
+        <span>設備控管</span>
+      </a>
+      <a href="deviceLog.html" class="one">
+        <img src="img/menu/deviceLog.svg" alt="" class="normal">
+        <img src="img/menu/deviceLog_active.svg" alt="" class="active">
+        <span>設備歷程</span>
+      </a>
+      <a href="playSelection.html" class="one">
+        <img src="img/menu/play.svg" alt="" class="normal">
+        <img src="img/menu/play_active.svg" alt="" class="active">
+        <span>媒體上刊</span>
+      </a>
+      <a href="playList.html" class="one">
+        <img src="img/menu/playlist.svg" alt="" class="normal">
+        <img src="img/menu/playlist_active.svg" alt="" class="active">
+        <span>刊播列表</span>
+      </a>
+      <a href="member.html" class="one">
+        <img src="img/menu/user_M.svg" alt="" class="small">
+        <span>會員中心</span>
+      </a>
+      <a href="login.html" class="one">
+        <img src="img/menu/logout_M.svg" alt="" class="small">
+        <span>帳號登出</span>
+      </a>
+      <a href="javascript:;" class="textSmall">
+        <span>語系</span>
+        <select>
+          <option value="taiwan">台灣</option>
+          <option value="english">English</option>
+        </select>
+      </a>    
+    </div>
+  </div>
+</div>
+<script>
+  
+  $('header nav').click(function () {
+    $('header .menu').slideToggle();
+    $("body").toggleClass('menuOpen');
+    $('#main').toggleClass('sliderDown');
+    $('header').toggleClass('open');
+  });
+    let windowWidth =$(window).width();
+    let count = 0;
+    let sideWidth =$('#main .sideWP').width();
+    
+    //get date time
+    let dayNow = new Date();
+    let day = dayNow.getDate();
+    let month = dayNow.getMonth();
+    let year = dayNow.getFullYear();
+    let hour = dayNow.getHours();
+    let minutes = dayNow.getMinutes();
+
+    $('header .btnWP .hello .time').text(`${year}/${month+1}/${day} ${hour}:${minutes}`);
+    
+    $('.toggle').click(function(){
+          count++;
+          if(count%2 == 0){
+            $(this).removeClass('hided');
+            $('.sideWP').css({'display':'block','width':179,'margin':0});
+            $('header .wrapper h1').css({'display':'block','width':177});
+            $('#main .side').css({'display':'block','width':'100%','margin':'0 auto'});
+            $('#main .side a').css({'padding-left':12});
+            $('header .toggle').css({'left':167});
+            $('#main .side>a span ').css({'display':'block'});
+            $('header .wrapper h1 a').removeClass('smallLogo');
+            $('.content').css({'width':'90vw','margin-left':0});
+          }else{
+            $(this).addClass('hided');
+            $('.sideWP, #main .side').css({'width':60});
+            $('#main .side a').css({'padding-left':12});
+            $('header .wrapper h1').css({'width':58});
+            $('header .toggle').css({'left':46});
+            $('#main .side>a span ').css({'display':'none'});
+            $('header .wrapper h1 a').addClass('smallLogo');
+            $('.content').css({'width':'100%'});
+          }
+    });
+</script>

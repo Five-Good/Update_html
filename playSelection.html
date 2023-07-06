@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+  <script src="https://cdn.datatables.net/v/dt/dt-1.13.5/datatables.min.js"></script>
+  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
+  <link href="https://cdn.datatables.net/v/dt/dt-1.13.5/datatables.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/playSelection.css">
+  <title>媒體上刊</title>
+</head>
+<body>
+  <header></header>
+  <div id="main">
+    <div class="sideWP"></div>
+    <div class="content">
+      <ul class="stepFlex">
+        <li class="now">
+          <div class="circle">01</div>
+          <span>刊播時間</span> 
+        </li>
+        <li>
+          <div class="circle">02</div>
+          <span>選擇素材</span> 
+        </li>
+        <li>
+          <div class="circle">03</div>
+          <span>選擇設備</span> 
+        </li>
+        <li>
+          <div class="circle">04</div>
+          <span>刊播佈局</span> 
+        </li>
+      </ul>
+      <form action="" class="stepContent">
+        <div class="step step1">
+          <div class="bg">
+            <div class="flexrow">
+              <div class="date">
+                  <p>開始日期</p>
+                  <input type="text" class="datepicker" id="startdate">
+              </div>
+              <div class="date">
+                <p>結束日期</p>
+                <input type="text" class="datepicker" id="enddate">
+              </div>
+              <div class="time starttime">
+                <p>開始時間</p>
+                <input type="text" class="timepicker" id="starttime">
+              </div>
+              <div class="time endtime">
+                <p>結束時間</p>
+                <input type="text" class="timepicker" id="endtime">
+              </div>
+            </div>
+          </div>
+          <div class="btn stepBtn stepBtn1">確認時間</div>
+        </div>
+        <div class="step step2">
+          <div class="searchBar top">
+            <div class="flexrow flex">
+              <label for="mediaName">上刊名稱 :</label>
+              <input type="text" id="mediaName" placeholder="請輸入此次上刊的名稱">
+            </div>
+            <div class="searchBar top">
+              <div class="btn back1 border yellow">返回時間</div>
+              <div class="btn stepBtn stepBtn2">確認素材</div>
+             </div>
+           </div>
+          <div class="searchBar">
+            <div class="filter">
+               <div class="flex">
+                   <label for="fileName">檔名 :</label>
+                   <input type="text"id="fileName" placeholder="請輸入">
+               </div>
+               <div class="flex">
+                   <label for="tagMedia">標籤 :</label>
+                   <input type="text" id="tagMedia"placeholder="多個標籤,請用逗號分開">
+               </div>
+               <div class="flex">
+                   <label for="type" >格式 :</label>
+                   <select name="" id="type">
+                       <option value="all">全部</option>
+                       <option value="img">圖片</option>
+                       <option value="vedio">影片</option>
+                   </select>
+               </div>
+               <div class="flex">
+                   <label for="second">秒數 :</label>
+                   <select name="" id="second">
+                       <option value="all">全部</option>
+                       <option value="30">30</option>
+                       <option value="25">25</option>
+                       <option value="20">20</option>
+                       <option value="15">15</option>
+                       <option value="10">10</option>
+                   </select>
+               </div>
+               <div class="flex">
+                   <label for="date">上架日期 :</label>
+                   <input type="text" class="datepicker" id="mediadate">
+               </div>
+             </div>
+             <div class="btn search">查詢</div>
+          </div>
+          <div class="selectContent">
+            <section class="flex">
+              <div class="listWP">
+                <div class="title">選擇素材</div>
+                <ul class="list list1">
+                  <li>
+                    <img src="img/media/mediaImg.svg" alt="">
+                    <div class="info">
+                      <div class="fileName">
+                        檔案名稱目前沒有限制字數
+                      </div>
+                      <div class="detail">
+                        <div class="text">
+                          <div class="type">格式：<span>圖片</span></div>
+                          <div class="tag">標籤：<span>活動,夏季,音樂</span></div>
+                          <div class="second">秒數：<span>--</span></div>
+                          <div class="date">上架：<span>23.06.08</span></div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/mediaImg.svg" alt="">
+                    <div class="info">
+                      <div class="fileName">
+                        檔案名稱目前沒有限制字數
+                      </div>
+                      <div class="detail">
+                        <div class="text">
+                          <div class="type">格式：<span>圖片</span></div>
+                          <div class="tag">標籤：<span>活動,夏季,音樂</span></div>
+                          <div class="second">秒數：<span>--</span></div>
+                          <div class="date">上架：<span>23.06.08</span></div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/mediaImg.svg" alt="">
+                    <div class="info">
+                      <div class="fileName">
+                        檔案名稱目前沒有限制字數
+                      </div>
+                      <div class="detail">
+                        <div class="text">
+                          <div class="type">格式：<span>圖片</span></div>
+                          <div class="tag">標籤：<span>活動,夏季,音樂</span></div>
+                          <div class="second">秒數：<span>--</span></div>
+                          <div class="date">上架：<span>23.06.08</span></div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="btn addAll">全部加入</div>
+                <ul class="pagination" id="pagination1"></ul>
+              </div>
+              <div class="listWP">
+                <div class="title between">
+                  <div class="title">已加入</div>
+                  <p>※ 目前已加入<span class="total">3</span>筆。</p>
+                </div>
+                <ul class="list list2">
+                  <li>
+                    <img src="img/media/mediaImg.svg" alt="">
+                    <div class="info">
+                      <div class="fileName">
+                        檔案名稱目前沒有限制字數
+                      </div>
+                      <div class="detail">
+                        <div class="text">
+                          <div class="type">格式：<span>圖片</span></div>
+                          <div class="tag">標籤：<span>活動,夏季,音樂</span></div>
+                          <div class="second">秒數：<span>--</span></div>
+                          <div class="date">上架：<span>23.06.08</span></div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/mediaImg.svg" alt="">
+                    <div class="info">
+                      <div class="fileName">
+                        檔案名稱目前沒有限制字數
+                      </div>
+                      <div class="detail">
+                        <div class="text">
+                          <div class="type">格式：<span>圖片</span></div>
+                          <div class="tag">標籤：<span>活動,夏季,音樂</span></div>
+                          <div class="second">秒數：<span>--</span></div>
+                          <div class="date">上架：<span>23.06.08</span></div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/mediaImg.svg" alt="">
+                    <div class="info">
+                      <div class="fileName">
+                        檔案名稱目前沒有限制字數
+                      </div>
+                      <div class="detail">
+                        <div class="text">
+                          <div class="type">格式：<span>圖片</span></div>
+                          <div class="tag">標籤：<span>活動,夏季,音樂</span></div>
+                          <div class="second">秒數：<span>--</span></div>
+                          <div class="date">上架：<span>23.06.08</span></div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="btn deleteAll">全部移除</div>
+                <ul class="pagination" id="pagination2"></ul>
+              </div>
+              <div class="imgWP pc">
+                <img src="img/media/arrowRight.svg" class="arrowRight"alt=""><img src="img/media/arrowLeft.svg" class="arrowLeft"alt="">
+              </div>
+              <div class="imgWP mobile">
+                <img src="img/media/down.svg" class="arrowDown"alt=""><img src="img/media/up.svg" class="arrowUp"alt="">
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="step step3">
+           <div class="searchBar top">
+            <div class="btn back2 border yellow">返回素材</div>
+            <div class="btn stepBtn stepBtn3">確認設備</div>
+           </div>
+           <div class="searchBar">
+            <div class="filter">
+                <div class="flex">
+                    <label for="tag">標籤 :</label>
+                    <input type="text" id="tag" placeholder="多個標籤,請用逗號分開">
+                </div>
+                <div class="flex">
+                    <label for="city">縣市 :</label>
+                    <select name="" id="city">
+                        <option value="all">全部</option>
+                        <option value="Taipei">台北市</option>
+                        <option value="New Taipei City">新北市</option>
+                    </select>
+                </div>
+                <div class="flex">
+                    <label for="area">區域 :</label>
+                    <select name="" id="area">
+                        <option value="all">全部</option>
+                        <option value="--">中正區</option>
+                        <option value="105">松山區</option>
+                        <option value="106">大安區</option>
+                        <option value="110">信義區</option>
+                    </select>
+                </div>
+                <div class="flex">
+                  <label for="road">道路 :</label>
+                  <select name="" id="road">
+                      <option value="all">全部</option>
+                      <option value=" ">道路的名稱</option>
+                      <option value=" ">道路的名稱</option>
+                      <option value=" ">道路名稱</option>
+                      <option value=" ">道路名稱</option>
+                  </select>
+              </div>
+                <div class="flex">
+                    <label for="screen">螢幕 :</label>
+                    <select name="" id="screen">
+                        <option value="all">全部</option>
+                        <option value="horizontal">橫式</option>
+                        <option value="vertical">直式</option>
+                    </select>
+                </div>
+                <div class="flex">
+                    <label for="state">狀態 :</label>
+                    <select name="" id="state">
+                        <option value="all">全部</option>
+                        <option value="">出租</option>
+                        <option value="">可租</option>
+                        <option value="">售出</option>
+                        <option value="">報廢</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn search">查詢</div>
+           </div>
+           <div class="selectContent">
+            <section class="flex">
+              <div class="listWP">
+                <div class="title">選擇設備</div>
+                <ul class="list list1">
+                  <li>
+                    <img src="img/media/screenV.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenV.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenV.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenV.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                 <li>
+                    <img src="img/media/screenV.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenV.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenV.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>加入</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li> 
+                </ul>
+                <div class="btn addAll">全部加入</div>
+                <ul class="pagination" id="pagination1"></ul>
+              </div>
+              <div class="listWP">
+                <div class="title between">
+                  <div class="title">已加入</div>
+                  <p>※ 目前已加入<span class="total">7</span>筆。</p>
+                </div>
+                <ul class="list list2">
+                  <li>
+                    <img src="img/media/screenH.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenH.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenH.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenH.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li><li>
+                    <img src="img/media/screenH.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenH.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/media/screenH.svg" alt="">
+                    <div class="info">
+                      <div class="detail">
+                        <div class="text">
+                          <div>
+                            <div class="city">台北市</div>
+                            <div class="area">大安區</div>
+                            <div class="road">信義路二段</div>
+                          </div>
+                          <div>
+                            <div class="screen">螢幕</div>
+                            <div class="camera">鏡頭</div>
+                          </div>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox"> <span>移除</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="btn deleteAll">全部移除</div>
+                <ul class="pagination" id="pagination2"></ul>
+              </div>
+              <div class="imgWP pc">
+                <img src="img/media/arrowRight.svg" class="arrowRight"alt=""><img src="img/media/arrowLeft.svg" class="arrowLeft"alt="">
+              </div>
+              <div class="imgWP mobile">
+                <img src="img/media/down.svg" class="arrowDown"alt=""><img src="img/media/up.svg" class="arrowUp"alt="">
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="step step4">
+          <div class="searchBar top">
+            <div class="btn back3 border yellow">返回設備</div>
+            <div class="btn stepBtn stepBtn4">確認上刊</div>
+           </div>
+            <div class="accordion">
+              <label for="tab1">
+                <div class="flex">
+                  <img src="img/media/calender.svg" alt="" class="icon">
+                  <span>刊播時間</span>
+                </div>
+                <img src="img/media/up_white.svg" alt="" class="arrowUp"><img src="img/media/down_white.svg" alt="" class="arrowDown">
+              </label>
+              <div class="tabContentWP">
+                <input type="radio" name="tab" id="tab1">
+                <div class="tabContent">
+                  <div class="flexrow">
+                    <div class="flex">
+                      <div class="dateWP">
+                        <div class="date">
+                            <p>開始日期</p>
+                            <span class="after">2023/06/21</span>
+                        </div>
+                        <div class="date">
+                          <p>結束日期</p>
+                          <span>2023/09/20</span>
+                        </div>
+                      </div>
+                      <div class="timeWP">
+                        <div class="time starttime">
+                          <p>開始時間</p>
+                          <span class="after">07:00 AM</span>
+                        </div>
+                        <div class="time endtime">
+                          <p>結束時間</p>
+                          <span>08:00 PM</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn back1 margin border yellow relative">返回時間</div>
+                  </div>
+                </div>
+              </div>
+              <label for="tab2">
+                <div class="flex">
+                  <img src="img/media/folder.svg" alt="" class="icon">
+                  <span>刊播素材</span>
+                </div>
+                <img src="img/media/up_white.svg" alt="" class="arrowUp"><img src="img/media/down_white.svg" alt="" class="arrowDown">
+              </label>
+              <div class="tabContentWP">
+                <input type="radio" name="tab" id="tab2">
+                <div class="tabContent">
+                  <div class="btn back2 margin border yellow">返回素材</div>
+                  <table class="pcTable edit table table-striped table-bordered" cellspacing="0" id="play_mediaList">
+                    <thead>
+                      <tr>
+                        <th>編號</th>
+                        <th>檔名</th>
+                        <th>縮圖</th>
+                        <th>格式</th>
+                        <th>標籤</th>
+                        <th>秒數</th>
+                        <th>核准日期</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>A000000001</td>
+                        <td>機場宣導</td>
+                        <td><img src="img/table/smallPhoto.png" alt=""></td>
+                        <td>圖片</td>
+                        <td class="tagTd">
+                          <div class="tags">
+                            <span class="tag">活動</span>
+                            <span class="tag">夏季</span>
+                            <span class="tag">音樂</span>
+                          </div>
+                        </td>
+                        <td>--</td>
+                        <td>23.06.06</td>
+                      </tr>
+                      <tr>
+                        <td>B000000002</td>
+                        <td>機場宣導</td>
+                        <td><img src="img/table/smallPhoto.png" alt=""></td>
+                        <td>圖片</td>
+                        <td class="tagTd">
+                          <div class="tags">
+                            <span class="tag">活動</span>
+                            <span class="tag">夏季</span>
+                            <span class="tag">音樂</span>
+                          </div>
+                        </td>
+                        <td>--</td>
+                        <td>23.06.16</td>
+                      </tr>
+                      <tr>
+                        <td>C000000001</td>
+                        <td>機場宣導</td>
+                        <td><img src="img/table/smallPhoto.png" alt=""></td>
+                        <td>影片</td>
+                        <td class="tagTd">
+                          <div class="tags">
+                            <span class="tag">活動</span>
+                            <span class="tag">夏季</span>
+                            <span class="tag">音樂</span>
+                          </div>
+                        </td>
+                        <td>15</td>
+                        <td>23.06.26</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <label for="tab3">
+                <div class="flex">
+                  <img src="img/media/device.svg" alt="" class="icon">
+                  <span>刊播設備</span>
+                </div>
+                <img src="img/media/up_white.svg" alt="" class="arrowUp"><img src="img/media/down_white.svg" alt="" class="arrowDown">
+              </label>
+              <div class="tabContentWP">
+                <input type="radio" name="tab" id="tab3">
+                <div class="tabContent">
+                  <div class="btn back3 margin border yellow">返回設備</div>
+                  <table class="pcTable edit table table-striped table-bordered" cellspacing="0" id="play_deviceList">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>縣市</th>
+                        <th>區域</th>
+                        <th>道路</th>
+                        <th>螢幕</th>
+                        <th>鏡頭</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>mac address</td>
+                        <td>台北市</td>
+                        <td>大安區</td><td>道路名稱</td>
+                        <td>直式</td>
+                        <td>Y</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <label for="tab4">
+                <div class="flex">
+                  <img src="img/media/layout.svg" alt="" class="icon">
+                  <span>刊播佈局</span>
+                </div>
+                <img src="img/media/up_white.svg" alt="" class="arrowUp"><img src="img/media/down_white.svg" alt="" class="arrowDown">
+              </label>
+              <div class="tabContentWP">
+                <input type="radio" name="tab" id="tab4">
+                <div class="tabContent">
+                  <div class="flex">
+                     <div class="flex column">
+                        <img src="img/media/layoutF.svg" alt="">
+                        <div class="flex">
+                          <input type="radio" name="layout" id="layoutF"><label for="layoutF">全螢幕</label>
+                        </div>
+                     </div>
+                     <div class="flex column">
+                        <img src="img/media/layoutV.svg" alt="">
+                        <div class="flex">
+                          <input type="radio" name="layout" id="layoutV"><label for="layoutV">直分割</label>
+                        </div>
+                    </div>
+                    <div class="flex column">
+                      <img src="img/media/layoutH.svg" alt="">
+                      <div class="flex">
+                        <input type="radio" name="layout" id="layoutH"><label for="layoutH">橫分割</label>
+                      </div>
+                   </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="sideNo">6</div>
+  <script src="js/dataTable.js"></script>
+  <script src="js/dateTimepicker.js"></script>
+  <script>
+  
+  $(document).ready(function(){
+   
+  //back
+  $('.back1').click(function(){
+    $('.step1').show();
+    $('.step1').siblings('.step').hide();
+    $('.stepFlex.step2').removeClass('step2');
+    $('.stepFlex>li').eq(1).removeClass('now');
+    $('.stepFlex>li').eq(0).removeClass('confirm').addClass('now');
+  });
+  $('.back2').click(function(){
+    $('.step2').show();
+    $('.step2').siblings('.step').hide();
+    $('.stepFlex.step3').removeClass('step3');
+    $('.stepFlex>li').eq(2).removeClass('now');
+    $('.stepFlex>li').eq(1).removeClass('confirm').addClass('now');
+  });
+  $('.back3').click(function(){
+    $('.step3').show();
+    $('.step3').siblings('.step').hide();
+    $('.stepFlex.step4').removeClass('step4');
+    $('.stepFlex>li').eq(3).removeClass('now');
+    $('.stepFlex>li').eq(1).removeClass('confirm');
+    $('.stepFlex>li').eq(2).removeClass('confirm').addClass('now');
+  });
+  //stepBtn1
+  $('.step1 input').change(function(){ 
+    if($('.starttime .timepicker-span-hours').text() !='' && $('.endtime .timepicker-span-hours').text() !='' ){
+      $('.stepBtn1').addClass('confirm');
+      $('.stepBtn1').addClass('confirm');
+    }else if($('#starttime').val() =='' || $('#endtime').val() ==''){
+      $('.stepBtn1').removeClass('confirm');
+      $('.stepBtn1').removeClass('confirm');
+    }
+  });
+  $('.stepBtn1').click(function(){
+    if($('.starttime .timepicker-span-hours').text() !='' && $('.endtime .timepicker-span-hours').text() !='' ){
+        $('.step1').hide();
+        $('.step2').show();
+        $('.stepFlex').addClass('step2');
+        $('.stepFlex>li').eq(0).removeClass('now').addClass('confirm');
+        $('.stepFlex>li').eq(1).addClass('now');
+      }
+   });
+//stepBtn2
+   $('.stepBtn2').click(function(){
+    $('.stepFlex').addClass('step3');//step by step
+    $('.step2').hide();
+    $('.step3').show();
+    $('.stepFlex>li').eq(1).removeClass('now').addClass('confirm');
+    $('.stepFlex>li').eq(2).addClass('now');
+   });
+   //stepBtn3
+   $('.stepBtn3').click(function(){
+    $('.stepFlex').addClass('step4');
+    $('.step3').hide();
+    $('.step4').show();
+    $('.stepFlex>li').eq(2).removeClass('now').addClass('confirm');
+    $('.stepFlex>li').eq(3).addClass('now');
+   });
+ 
+    //stepBtn4
+    $('.stepBtn4').click(function(){
+      window.location = "http://localhost:8888/23.07.03_fiveGood/playList.html";
+    });
+  
+  
+  });
+        
+  </script>
+</body>
+</html>
